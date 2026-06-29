@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import SectionTitle from "../ui/SectionTitle";
 
 export default function Contact() {
@@ -9,7 +10,13 @@ export default function Contact() {
       />
 
       <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
-        <div className="max-w-xl">
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-xl"
+        >
           <h3 className="text-2xl font-semibold sm:text-3xl">
             Let's work together.
           </h3>
@@ -51,11 +58,15 @@ export default function Contact() {
               GitHub
             </a>
           </div>
-        </div>
+        </motion.div>
 
-        <form
+        <motion.form
           action="https://formspree.io/f/YOUR_FORM_ID"
           method="POST"
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
           className="card space-y-4 sm:space-y-5"
         >
           <input
@@ -85,7 +96,7 @@ export default function Contact() {
           <button type="submit" className="btn-primary w-full sm:w-auto">
             Send Message
           </button>
-        </form>
+        </motion.form>
       </div>
     </section>
   );
