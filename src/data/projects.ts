@@ -1,4 +1,13 @@
-export const projects = [
+export type Project = {
+  title: string;
+  description: string;
+  tech: string[];
+  githubUrl?: string;
+  demoUrl?: string;
+  status?: "In Progress" | "Completed";
+};
+
+export const projects: Project[] = [
   {
     title: "TaskFlow",
     description:

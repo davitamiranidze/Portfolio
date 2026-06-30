@@ -1,11 +1,4 @@
-type ProjectCardProps = {
-  title: string;
-  description: string;
-  tech: string[];
-  githubUrl?: string;
-  demoUrl?: string;
-  status?: "In Progress" | "Completed";
-};
+import type { Project } from "../../data/projects";
 
 export default function ProjectCard({
   title,
@@ -14,7 +7,7 @@ export default function ProjectCard({
   githubUrl,
   demoUrl,
   status,
-}: ProjectCardProps) {
+}: Project) {
   return (
     <article className="card relative flex h-full flex-col">
       <div className="flex items-start justify-between gap-4">
