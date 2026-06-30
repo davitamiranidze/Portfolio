@@ -15,8 +15,8 @@ export default function About() {
 
       <div className="grid gap-8 md:gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
         <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="max-w-3xl space-y-5 sm:space-y-6"
@@ -38,8 +38,8 @@ export default function About() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="max-w-3xl space-y-5 sm:space-y-6"

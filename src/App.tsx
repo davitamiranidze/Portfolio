@@ -5,10 +5,19 @@ import Hero from "./components/sections/Hero";
 import Projects from "./components/sections/Projects";
 import Skills from "./components/sections/Skills";
 import Footer from "./components/layout/Footer";
+import { Toaster } from "sonner";
 
 function App() {
   return (
     <>
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          classNames: {
+            toast: "border border-zinc-200 bg-white text-black",
+          },
+        }}
+      />
       <Navbar />
 
       <main>

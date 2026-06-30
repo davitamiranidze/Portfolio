@@ -42,18 +42,19 @@ export default function Skills() {
             key={category}
             variants={item}
             transition={{ duration: 0.5 }}
-            className="card flex h-full flex-col"
           >
-            <h3 className="mb-5 text-xl font-semibold capitalize sm:mb-6 sm:text-2xl">
-              {category}
-            </h3>
+            <div className="card flex h-full flex-col">
+              <h3 className="mb-5 text-xl font-semibold capitalize sm:mb-6 sm:text-2xl">
+                {category}
+              </h3>
 
-            <div className="flex flex-wrap gap-2.5 sm:gap-3">
-              {items.map((skill) => (
-                <span key={skill} className="badge">
-                  {skill}
-                </span>
-              ))}
+              <div className="flex flex-wrap gap-2.5 sm:gap-3">
+                {items.map((skill) => (
+                  <span key={skill} className="badge">
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </motion.div>
         ))}
