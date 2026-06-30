@@ -50,9 +50,9 @@ export default function Navbar() {
           <Dialog.Portal>
             <Dialog.Overlay className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm md:hidden" />
 
-            <Dialog.Content className="fixed right-0 top-0 z-50 h-screen w-[82vw] max-w-80 border-l border-zinc-200 bg-white p-6 shadow-2xl outline-none md:hidden dark:border-zinc-800 dark:bg-black">
-              <Dialog.Close asChild>
-                <div className="flex justify-end">
+            <Dialog.Content className="fixed right-0 top-0 z-50 h-screen w-[82vw] max-w-80 border-l border-zinc-200 bg-white shadow-2xl outline-none md:hidden dark:border-zinc-800 dark:bg-black">
+              <div className="flex h-[72px] items-center justify-end px-4 sm:px-6">
+                <Dialog.Close asChild>
                   <button
                     type="button"
                     aria-label="Close menu"
@@ -60,24 +60,26 @@ export default function Navbar() {
                   >
                     <X className="h-5 w-5" />
                   </button>
+                </Dialog.Close>
+              </div>
+
+              <div className="px-6 pb-6">
+                <nav className="mt-8 flex flex-col gap-6">
+                  {navLinks.map((link) => (
+                    <Dialog.Close asChild key={link.href}>
+                      <a
+                        href={link.href}
+                        className="text-lg font-medium text-zinc-700 transition hover:text-black dark:text-zinc-300 dark:hover:text-white"
+                      >
+                        {link.label}
+                      </a>
+                    </Dialog.Close>
+                  ))}
+                </nav>
+
+                <div className="mt-10 border-t border-zinc-200 pt-6 dark:border-zinc-800">
+                  <ThemeToggle />
                 </div>
-              </Dialog.Close>
-
-              <nav className="mt-10 flex flex-col gap-6">
-                {navLinks.map((link) => (
-                  <Dialog.Close asChild key={link.href}>
-                    <a
-                      href={link.href}
-                      className="text-lg font-medium text-zinc-700 transition hover:text-black dark:text-zinc-300 dark:hover:text-white"
-                    >
-                      {link.label}
-                    </a>
-                  </Dialog.Close>
-                ))}
-              </nav>
-
-              <div className="mt-10 border-t border-zinc-200 pt-6 dark:border-zinc-800">
-                <ThemeToggle />
               </div>
             </Dialog.Content>
           </Dialog.Portal>
