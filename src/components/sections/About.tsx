@@ -2,7 +2,7 @@ import SectionTitle from "../ui/SectionTitle";
 import { motion } from "motion/react";
 
 const quickFacts = [
-  { label: "Location", value: "France 🇫🇷" },
+  { label: "Location", value: "France" },
   { label: "Degree", value: "B.Sc. Computer Science" },
   { label: "Focus", value: "Frontend & Backend" },
   { label: "Languages", value: "English • French • Georgian" },
