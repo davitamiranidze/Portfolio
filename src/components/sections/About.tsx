@@ -1,12 +1,7 @@
 import SectionTitle from "../ui/SectionTitle";
 import { motion } from "motion/react";
-
-const quickFacts = [
-  { label: "Location", value: "France" },
-  { label: "Degree", value: "B.Sc. Computer Science" },
-  { label: "Focus", value: "Frontend & Backend" },
-  { label: "Languages", value: "English • French • Georgian" },
-];
+import { paragraphs } from "../../data/about";
+import { quickFacts } from "../../data/about";
 
 export default function About() {
   return (
@@ -22,18 +17,11 @@ export default function About() {
           className="max-w-3xl space-y-5 sm:space-y-6"
         >
           <div className="max-w-3xl space-y-5 sm:space-y-6">
-            <p className="paragraph">
-              I'm a frontend developer passionate about building modern,
-              responsive, and accessible web applications that deliver great
-              user experiences.
-            </p>
-
-            <p className="paragraph">
-              I enjoy turning ideas into reliable software by developing
-              intuitive user interfaces, integrating REST APIs, and writing
-              clean, maintainable code. I'm committed to continuous learning and
-              delivering high-quality solutions that create real value.
-            </p>
+            {paragraphs.map((paragraph) => (
+              <p key={paragraph.key} className="paragraph">
+                {paragraph.text}
+              </p>
+            ))}
           </div>
         </motion.div>
 

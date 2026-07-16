@@ -6,6 +6,7 @@ import Projects from "./components/sections/Projects";
 import Skills from "./components/sections/Skills";
 import Footer from "./components/layout/Footer";
 import { Toaster } from "sonner";
+import BackToTop from "./components/ui/BackToTop";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
       </main>
 
       <Footer />
+      <BackToTop />
     </>
   );
 }
